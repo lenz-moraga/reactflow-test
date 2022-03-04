@@ -67,9 +67,9 @@ const initialElements = [
     data: { label: <TreeNode /> },
     position: { x: 100, y: 100 },
   },
-  { id: 'e1-2', source: '1', target: '2' },
-  { id: 'e1-3', source: '1', target: '3' },
-  { id: 'e1-4', source: '1', target: '4' },
+  { id: 'e1-2', source: '1', target: '2', type: 'step' },
+  { id: 'e1-3', source: '1', target: '3', type: 'step' },
+  { id: 'e1-4', source: '1', target: '4', type: 'step' },
 ];
 const layoutedElements = getLayoutedElements(initialElements);
 
