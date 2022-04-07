@@ -39,6 +39,6 @@
     ]
   },
   "devDependencies": {
-    "react-flow-renderer": "^9.7.4"
+    "react-flow-renderer": "^10.0.8"
   }
 }

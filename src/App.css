@@ -1,40 +1,39 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import "bootstrap/dist/css/bootstrap.min.css";
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.NodeContainer {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.NodeContainer-Information {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.NodeContainer-Information p {
+  margin: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.showNodeSetup {
+  width: 30%;
+  height: 100vh;
+  background-color: white;
+  z-index: 5000;
+  top: 0;
+  right: 0;
+  left: auto;
+  position: absolute;
+}
+
+.react-flow__node-default {
+  transition: all ease-in 5s;
+}
+
+.react-flow__node-default:hover {
+  height: 150px;
 }

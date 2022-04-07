@@ -1,16 +1,20 @@
-import React from 'react';
-import nodeIcon from '../assets/nodeIcon.svg';
+import React from "react";
+import nodeIcon from "../assets/nodeIcon.svg";
 
-const TreeNode = () => {
+const TreeNode = ({ nodeName, hasProducts }) => {
   return (
-    <div>
-      <span className="badge bg-secondary">FastLane</span>
-      <div>
+    <div className="NodeContainer">
+      {hasProducts && <span className="badge bg-secondary">FastLane</span>}
+      <div className="NodeContainer-Information">
         <img src={nodeIcon} alt="node icon.svg" />
-        <p>1. Everything</p>
+        <p>{nodeName}</p>
       </div>
     </div>
   );
+};
+
+TreeNode.defaultProps = {
+  hasProducts: false,
 };
 
 export default TreeNode;
