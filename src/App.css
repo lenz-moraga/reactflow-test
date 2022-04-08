@@ -7,7 +7,7 @@
   gap: 10px;
 }
 
-.NodeContainer-Information {
+.NodeContainer-Name {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,14 +15,19 @@
   gap: 10px;
 }
 
-.NodeContainer-Information p {
+.NodeContainer-Position {
+  border-top: 0.5px solid black;
+  width: 100%;
+  text-align: left;
+}
+
+.NodeContainer-Name p {
   margin: 0px;
 }
 
 .showNodeSetup {
-  width: 30%;
+  width: 100vw;
   height: 100vh;
-  background-color: white;
   z-index: 5000;
   top: 0;
   right: 0;
@@ -30,10 +35,32 @@
   position: absolute;
 }
 
-.react-flow__node-default {
+.darkedBackground {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 5001;
+  top: 0;
+  right: 0;
+  left: auto;
+  position: absolute;
+}
+
+.nodeContainer {
+  width: 30%;
+  height: 100vh;
+  background: white;
+  z-index: 5002;
+  top: 0;
+  right: 0;
+  left: auto;
+  position: absolute;
+}
+
+/* .react-flow__node-default {
   transition: all ease-in 5s;
 }
 
 .react-flow__node-default:hover {
   height: 150px;
-}
+} */

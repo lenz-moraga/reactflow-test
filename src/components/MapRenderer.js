@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { MapContext } from "../services/MapProvider";
 import ReactFlow, {
   addEdge,
@@ -11,86 +11,77 @@ import ReactFlow, {
 } from "react-flow-renderer";
 import TreeNode from "./TreeNode";
 import dagre from "dagre";
+import EditContainer from "./EditContainer";
+
+////////////////////////////////////////////////////////////////////////////
 
 const dagreGraph = new dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
 
 const nodeWidth = 172;
-const nodeHeight = 36;
+const nodeHeight = 72;
 
-const initialNodes = [
+const customNodes = [
   {
-    id: "horizontal-1",
-    sourcePosition: "right",
-    type: "input",
-    className: "dark-node",
-    data: { label: <TreeNode nodeName="+ 1 800 2224" /> },
-    position: { x: 0, y: 80 },
+    id: 'horizontal-1',
+    nodeLabel: '+1 888 222 3333',
+    nodePosition: '0',
+    hasProducts: false
   },
   {
-    id: "horizontal-2",
-    sourcePosition: "right",
-    targetPosition: "left",
-    data: { label: <TreeNode nodeName="1. Everything" hasProducts={true} /> },
-    position: { x: 250, y: 0 },
+    id: 'horizontal-2',
+    nodeLabel: 'English',
+    nodePosition: '1.1',
+    hasProducts: true
   },
   {
-    id: "horizontal-3",
-    sourcePosition: "right",
-    targetPosition: "left",
-    data: { label: <TreeNode nodeName="1. Everything" hasProducts={true} /> },
-    position: { x: 250, y: 160 },
+    id: 'horizontal-3',
+    nodeLabel: 'Spanish',
+    nodePosition: '1.2',
+    hasProducts: true
   },
   {
-    id: "horizontal-4",
-    sourcePosition: "right",
-    targetPosition: "left",
-    data: { label: <TreeNode nodeName="1. Everything" hasProducts={true} /> },
-    position: { x: 500, y: 0 },
+    id: 'horizontal-4',
+    nodeLabel: 'Portuguese',
+    nodePosition: '1.3',
+    hasProducts: true
   },
   {
-    id: "horizontal-5",
-    sourcePosition: "right",
-    targetPosition: "left",
-    data: { label: <TreeNode nodeName="1. Everything" /> },
-    position: { x: 500, y: 100 },
+    id: 'horizontal-5',
+    nodeLabel: 'Sales',
+    nodePosition: '1.3.1',
+    hasProducts: false
   },
   {
-    id: "horizontal-6",
-    sourcePosition: "right",
-    targetPosition: "left",
-    data: { label: <TreeNode nodeName="1. Everything" /> },
-    position: { x: 500, y: 230 },
+    id: 'horizontal-6',
+    nodeLabel: 'Customer Support',
+    nodePosition: '1.3.2',
+    hasProducts: false
   },
   {
-    id: "horizontal-7",
-    sourcePosition: "right",
-    targetPosition: "left",
-    data: { label: <TreeNode nodeName="1. Everything" /> },
-    position: { x: 750, y: 50 },
+    id: 'horizontal-7',
+    nodeLabel: 'Support',
+    nodePosition: '1.3.3',
+    hasProducts: false
   },
   {
-    id: "horizontal-8",
-    sourcePosition: "right",
-    targetPosition: "left",
-    data: { label: <TreeNode nodeName="1. Everything" /> },
-    position: { x: 750, y: 300 },
+    id: 'horizontal-8',
+    nodeLabel: 'Agents',
+    nodePosition: '1.2.1',
+    hasProducts: false
   },
+]
+
+const initialNodes = customNodes.map((customNode) => (
   {
-    id: "horizontal-9",
+    id: customNode.id,
     sourcePosition: "right",
     targetPosition: "left",
-    data: { label: <TreeNode nodeName="1. Everything" /> },
-    position: { x: 750, y: 300 },
-  },
-  {
-    id: "horizontal-10",
-    sourcePosition: "right",
-    targetPosition: "left",
-    data: { label: <TreeNode nodeName="1. Everything" /> },
-    position: { x: 750, y: 300 },
-  },
-];
+    data: {
+      label: <TreeNode nodeName={customNode.nodeLabel} nodePosition={customNode.nodePosition} hasProducts={customNode.hasProducts} />
+    },
+  }
+));
 
 const initialEdges = [
   { id: "e1-2", source: "horizontal-1", target: "horizontal-2", type: "step" },
@@ -143,16 +134,18 @@ const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
 
 //////////////////////////////////////////////////////////////////////////
 
-const MapRenderer = () => {
-  const { showDiv, showDivHandler, nodeInfo } = useContext(MapContext);
 
+const MapRenderer = () => {
+  const { showDiv, showDivHandler } = useContext(MapContext);
+
+  const [nodeName, setNodeName] = useState('');
   const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
 
+
   const onNodeClick = (event, node) => {
     showDivHandler();
-    
-    console.log("click node", event, node, "showDiv", showDiv);
+    setNodeName(customNodes.filter((customNode) => node.id === customNode.id))
   };
 
   const onConnect = (params) => setEdges((els) => addEdge(params, els));
@@ -174,9 +167,7 @@ const MapRenderer = () => {
         <Controls />
         <Background />
       </ReactFlow>
-      <div className={!showDiv ? "d-none" : "showNodeSetup"}>
-        <input value={nodeInfo.name} />
-      </div>
+      {showDiv && <EditContainer node={nodeName} setNodeName={setNodeName} />}
     </>
   );
 };
