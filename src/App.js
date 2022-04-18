@@ -1,4 +1,4 @@
-import "./App.css";
+import "./assets/styles/App.scss";
 import { MapProvider } from "./services/MapProvider";
 import MapRenderer from "./components/MapRenderer";
 

@@ -1,0 +1,17 @@
+@mixin product-badge() {
+  border-radius: 4px;
+  padding: 0px 8px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 16px;
+  color: #36434e;
+}
+
+.FastLane-Badge {
+  @include product-badge();
+  background-color: #fff6ed;
+}
+
+.PayPhone-Badge {
+  background: #f4edff;
+}
