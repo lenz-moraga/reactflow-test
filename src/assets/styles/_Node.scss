@@ -1,0 +1,57 @@
+
+.NodeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+
+  &-Name {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: start;
+    width: 100%;
+
+    p {
+      color: #292929;
+      font-family: "Poppins";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      margin: 0px;
+    }
+  }
+
+  &-Divider {
+    background-color: #a8a8a8;
+    height: 1px;
+    margin: 0px;
+    width: 100%;
+    display: none;
+  }
+  &-Position {
+    display: none;
+    justify-content: space-between;
+    text-align: left;
+    width: 100%;
+
+    span {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 24px;
+      color: #9e9e9e;
+    }
+  }
+
+  &:hover {
+    .NodeContainer-Divider {
+      display: inline-flex;
+    }
+    .NodeContainer-Position {
+      display: flex;
+    }
+  }
+}

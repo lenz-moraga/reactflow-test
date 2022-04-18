@@ -1,0 +1,84 @@
+[
+  {
+    "id": "horizontal-1",
+    "nodeLabel": "+1 888 222 3333",
+    "nodePosition": "1",
+    "from": "",
+    "to": ""
+  },
+  {
+    "id": "horizontal-2",
+    "nodeLabel": "English",
+    "nodePosition": "1.1",
+    "from": "horizontal-1",
+    "to": "horizontal-2",
+    "Rules": [
+      {
+        "RuleType": "FastLane",
+        "RuleId": "FLRule-123",
+        "RuleName": "FastLane-Rule123"
+      }
+    ]
+  },
+  {
+    "id": "horizontal-3",
+    "nodeLabel": "Spanish",
+    "nodePosition": "1.2",
+    "from": "horizontal-1",
+    "to": "horizontal-3",
+    "Rules": [
+      {
+        "RuleType": "PayPhone",
+        "RuleId": "PPRule-123",
+        "RuleName": "PayPhone-Rule123"
+      }
+    ]
+  },
+  {
+    "id": "horizontal-4",
+    "nodeLabel": "Portuguese",
+    "nodePosition": "1.3",
+    "from": "horizontal-1",
+    "to": "horizontal-4",
+    "Rules": [
+      {
+        "RuleType": "FastLane",
+        "RuleId": "FLRule-123",
+        "RuleName": "FastLane-Rule123"
+      },
+      {
+        "RuleType": "PayPhone",
+        "RuleId": "PPRule-123",
+        "RuleName": "PayPhone-Rule123"
+      }
+    ]
+  },
+  {
+    "id": "horizontal-5",
+    "nodeLabel": "Sales",
+    "nodePosition": "1.3.1",
+    "from": "horizontal-4",
+    "to": "horizontal-5"
+  },
+  {
+    "id": "horizontal-6",
+    "nodeLabel": "Customer Support",
+    "nodePosition": "1.3.2",
+    "from": "horizontal-4",
+    "to": "horizontal-6"
+  },
+  {
+    "id": "horizontal-7",
+    "nodeLabel": "Support",
+    "nodePosition": "1.3.3",
+    "from": "horizontal-4",
+    "to": "horizontal-7"
+  },
+  {
+    "id": "horizontal-8",
+    "nodeLabel": "Agents",
+    "nodePosition": "1.2.1",
+    "from": "horizontal-3",
+    "to": "horizontal-8"
+  }
+]
