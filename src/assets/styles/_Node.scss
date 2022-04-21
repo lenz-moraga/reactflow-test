@@ -1,4 +1,3 @@
-
 .NodeContainer {
   display: flex;
   flex-direction: column;
@@ -29,13 +28,11 @@
     height: 1px;
     margin: 0px;
     width: 100%;
-    display: none;
   }
   &-Position {
-    display: none;
     justify-content: space-between;
-    text-align: left;
     width: 100%;
+    display: flex;
 
     span {
       font-style: normal;
@@ -45,13 +42,21 @@
       color: #9e9e9e;
     }
   }
+}
 
-  &:hover {
-    .NodeContainer-Divider {
-      display: inline-flex;
+.react-flow__node-default {
+  .NodeContainer {
+    &-PositionContainer {
+      display: none;
     }
-    .NodeContainer-Position {
-      display: flex;
+  }
+  &.selected {
+    .NodeContainer {
+      &-PositionContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
     }
   }
 }

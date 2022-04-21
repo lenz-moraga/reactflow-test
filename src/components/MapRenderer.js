@@ -6,95 +6,56 @@ import ReactFlow, {
   Controls,
   useNodesState,
   useEdgesState,
-  Position,
 } from "react-flow-renderer";
 import TreeNode from "./TreeNode";
-import dagre from "dagre";
+
+import { getLayoutedElements } from "../services/layOutNodes";
+
 import EditContainer from "./EditContainer";
-import dataNode from '../assets/nodeData/dataNode.json'
+import dataNode from "../assets/nodeData/dataNode.json";
 
-////////////////////////////////////////////////////////////////////////////
+const MapRenderer = () => {
+  const { showDiv, showNodePosition, setShowNodePosition } =
+    useContext(MapContext);
+  const [nodeName, setNodeName] = useState("");
 
-const dagreGraph = new dagre.graphlib.Graph();
-dagreGraph.setDefaultEdgeLabel(() => ({}));
+  useEffect(() => {}, []);
 
-const nodeWidth = 172;
-const nodeHeight = 72;
+  ////////////////////////////////////////////////////////////////////////////
 
-const customNodes = [...dataNode]
-const filteredNodes = customNodes.filter((nodeInfo) => (
-  nodeInfo.from !== '' && nodeInfo.to !== ''
-))
-const initialEdges = filteredNodes.map((nodeInfo) => (
-  {
+  const customNodes = [...dataNode];
+  const filteredNodes = customNodes.filter(
+    (nodeInfo) => nodeInfo.from !== "" && nodeInfo.to !== ""
+  );
+  const initialEdges = filteredNodes.map((nodeInfo) => ({
     id: `edge-${nodeInfo.id}`,
     source: nodeInfo.from,
     target: nodeInfo.to,
     type: "default",
-  }
-))
+  }));
 
-const initialNodes = customNodes.map((customNode) => ({
-  id: customNode.id,
-  sourcePosition: "right",
-  targetPosition: "left",
-  data: {
-    label: <TreeNode key={customNode.id} nodeInformation={customNode} />,
-  },
-}));
+  const initialNodes = customNodes.map((customNode) => ({
+    id: customNode.id,
+    sourcePosition: "right",
+    targetPosition: "left",
+    data: {
+      label: <TreeNode key={customNode.id} nodeInformation={customNode} />,
+    },
+  }));
 
-const getLayoutedElements = (nodes, edges, direction = "LR") => {
-  const isHorizontal = direction === "LR";
-  dagreGraph.setGraph({ rankdir: direction });
+  const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
+    initialNodes,
+    initialEdges
+  );
 
-  nodes.forEach((node) => {
-    dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
-  });
-
-  edges.forEach((edge) => {
-    dagreGraph.setEdge(edge.source, edge.target);
-  });
-
-  dagre.layout(dagreGraph);
-
-  nodes.forEach((node) => {
-    const nodeWithPosition = dagreGraph.node(node.id);
-    node.targetPosition = isHorizontal ? Position.Left : Position.Top;
-    node.sourcePosition = isHorizontal ? Position.Right : Position.Bottom;
-
-    // We are shifting the dagre node position (anchor=center center) to the top left
-    // so it matches the React Flow node anchor point (top left).
-    node.position = {
-      x: nodeWithPosition.x - nodeWidth / 2,
-      y: nodeWithPosition.y - nodeHeight / 2,
-    };
-
-    return node;
-  });
-
-  return { nodes, edges };
-};
-
-const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
-  initialNodes,
-  initialEdges
-);
-
-//////////////////////////////////////////////////////////////////////////
-
-const MapRenderer = () => {
-  const { showDiv, showDivHandler } = useContext(MapContext);
-
-  const [nodeName, setNodeName] = useState("");
   const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
 
-  useEffect(() => { 
-    
-  }, [])
+  //////////////////////////////////////////////////////////////////////////
 
   const onNodeClick = (event, node) => {
-    showDivHandler();
+    if(event.detail === 2) console.log('first')
+    setShowNodePosition((prevState) => !prevState);
     setNodeName(customNodes.filter((customNode) => node.id === customNode.id));
   };
 

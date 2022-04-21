@@ -4,14 +4,23 @@ const MapContext = createContext();
 
 const MapProvider = ({ children }) => {
   const [showDiv, setShowDiv] = useState(false);
-  const [nodeInfo, setNodeInfo] = useState({})
+  const [showNodePosition, setShowNodePosition] = useState("");
+  const [nodeInfo, setNodeInfo] = useState({});
 
   const showDivHandler = () => {
     setShowDiv((prevState) => !prevState);
   };
 
   return (
-    <MapContext.Provider value={{showDiv, showDivHandler, nodeInfo}}>
+    <MapContext.Provider
+      value={{
+        showDiv,
+        showDivHandler,
+        nodeInfo,
+        showNodePosition,
+        setShowNodePosition,
+      }}
+    >
       {children}
     </MapContext.Provider>
   );
