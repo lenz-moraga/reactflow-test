@@ -8,7 +8,7 @@
   },
   {
     "id": "horizontal-2",
-    "nodeLabel": "English",
+    "nodeLabel": "1. English",
     "nodePosition": "1.1",
     "from": "horizontal-1",
     "to": "horizontal-2",
@@ -22,7 +22,7 @@
   },
   {
     "id": "horizontal-3",
-    "nodeLabel": "Spanish",
+    "nodeLabel": "2. Spanish",
     "nodePosition": "1.2",
     "from": "horizontal-1",
     "to": "horizontal-3",
@@ -36,7 +36,7 @@
   },
   {
     "id": "horizontal-4",
-    "nodeLabel": "Portuguese",
+    "nodeLabel": "3. Portuguese",
     "nodePosition": "1.3",
     "from": "horizontal-1",
     "to": "horizontal-4",

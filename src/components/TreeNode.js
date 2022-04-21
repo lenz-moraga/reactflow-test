@@ -17,8 +17,8 @@ const TreeNode = ({ nodeInformation, showNodePosition }) => {
     <div className="NodeContainer" id={id}>
       {Rules && <div className="BadgeContainer">{renderRuleBadges}</div>}
       <div className="NodeContainer-Name">
-        <img src={nodeIcon} alt="node icon.svg" />
-        <p>{nodeLabel}</p>
+        {/* <img src={nodeIcon} alt="node icon.svg" /> */}
+        <p># {nodeLabel}</p>
       </div>
       {nodePosition !== "1" && (
         <div className="NodeContainer-PositionContainer">

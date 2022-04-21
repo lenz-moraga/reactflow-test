@@ -4,6 +4,7 @@ import ReactFlow, {
   addEdge,
   MiniMap,
   Controls,
+  Background,
   useNodesState,
   useEdgesState,
 } from "react-flow-renderer";
@@ -74,6 +75,7 @@ const MapRenderer = () => {
         onNodeClick={onNodeClick}
         fitView
       >
+        <Background />
         <MiniMap />
         <Controls />
       </ReactFlow>
