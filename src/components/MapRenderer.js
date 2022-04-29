@@ -15,7 +15,7 @@ import { getLayoutedElements } from "../services/layOutNodes";
 import EditContainer from "./EditContainer";
 import dataNode from "../assets/nodeData/dataNode.json";
 
-const MapRenderer = () => {
+const MapRenderer = ({ nodesToRender }) => {
   const { showDiv, showNodePosition, setShowNodePosition } =
     useContext(MapContext);
   const [nodeName, setNodeName] = useState("");
@@ -24,23 +24,26 @@ const MapRenderer = () => {
 
   ////////////////////////////////////////////////////////////////////////////
 
-  const customNodes = [...dataNode];
+  console.log('nodesToRender', nodesToRender)
+
+  // const customNodes = nodesToRender;
+  const customNodes = dataNode;
   const filteredNodes = customNodes.filter(
-    (nodeInfo) => nodeInfo.from !== "" && nodeInfo.to !== ""
+    (nodeInfo) => nodeInfo.parentNode !== ""
   );
   const initialEdges = filteredNodes.map((nodeInfo) => ({
-    id: `edge-${nodeInfo.id}`,
-    source: nodeInfo.from,
-    target: nodeInfo.to,
+    id: `edge-${nodeInfo.nodeId}`,
+    source: nodeInfo.parentNode,
+    target: nodeInfo.nodeId,
     type: "default",
   }));
 
   const initialNodes = customNodes.map((customNode) => ({
-    id: customNode.id,
+    id: customNode.nodeId,
     sourcePosition: "right",
     targetPosition: "left",
     data: {
-      label: <TreeNode key={customNode.id} nodeInformation={customNode} />,
+      label: <TreeNode key={customNode.nodeId} nodeInformation={customNode} />,
     },
   }));
 
@@ -61,6 +64,8 @@ const MapRenderer = () => {
   };
 
   const onConnect = (params) => setEdges((els) => addEdge(params, els));
+
+
 
   return (
     <>

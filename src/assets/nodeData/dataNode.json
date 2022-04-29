@@ -1,182 +1,160 @@
 [
   {
-    "id": "horizontal-1",
+    "nodeId": "horizontal-1",
     "nodeLabel": "+1 888 222 3333",
     "nodePosition": "1",
-    "from": "",
-    "to": ""
+    "parentNode": ""
   },
   {
-    "id": "horizontal-2",
+    "nodeId": "horizontal-2",
     "nodeLabel": "1. English",
     "nodePosition": "1.1",
-    "from": "horizontal-1",
-    "to": "horizontal-2",
+    "parentNode": "horizontal-1",
     "Rules": [
       {
-        "RuleType": "FastLane",
         "RuleId": "FLRule-123",
+        "RuleType": "FastLane",
         "RuleName": "FastLane-Rule123"
       }
     ]
   },
   {
-    "id": "horizontal-3",
+    "nodeId": "horizontal-3",
     "nodeLabel": "2. Spanish",
     "nodePosition": "1.2",
-    "from": "horizontal-1",
-    "to": "horizontal-3",
+    "parentNode": "horizontal-1",
     "Rules": [
       {
-        "RuleType": "PayPhone",
         "RuleId": "PPRule-123",
+        "RuleType": "PayPhone",
         "RuleName": "PayPhone-Rule123"
       }
     ]
   },
   {
-    "id": "horizontal-4",
+    "nodeId": "horizontal-4",
     "nodeLabel": "3. Portuguese",
     "nodePosition": "1.3",
-    "from": "horizontal-1",
-    "to": "horizontal-4",
+    "parentNode": "horizontal-1",
     "Rules": [
       {
-        "RuleType": "FastLane",
         "RuleId": "FLRule-123",
+        "RuleType": "FastLane",
         "RuleName": "FastLane-Rule123"
       },
       {
-        "RuleType": "PayPhone",
         "RuleId": "PPRule-123",
+        "RuleType": "PayPhone",
         "RuleName": "PayPhone-Rule123"
       }
     ]
   },
   {
-    "id": "horizontal-5",
+    "nodeId": "horizontal-5",
     "nodeLabel": "Sales",
     "nodePosition": "1.3.1",
-    "from": "horizontal-4",
-    "to": "horizontal-5"
+    "parentNode": "horizontal-4"
   },
   {
-    "id": "horizontal-6",
+    "nodeId": "horizontal-6",
     "nodeLabel": "Customer Support",
     "nodePosition": "1.3.2",
-    "from": "horizontal-4",
-    "to": "horizontal-6"
+    "parentNode": "horizontal-4"
   },
   {
-    "id": "horizontal-7",
+    "nodeId": "horizontal-7",
     "nodeLabel": "Support",
     "nodePosition": "1.3.3",
-    "from": "horizontal-4",
-    "to": "horizontal-7"
+    "parentNode": "horizontal-4"
   },
   {
-    "id": "horizontal-8",
+    "nodeId": "horizontal-8",
     "nodeLabel": "Agents",
     "nodePosition": "1.2.1",
-    "from": "horizontal-3",
-    "to": "horizontal-8"
+    "parentNode": "horizontal-3"
   },
   {
-    "id": "horizontal-9",
+    "nodeId": "horizontal-9",
     "nodeLabel": "Sales",
     "nodePosition": "1.3.1",
-    "from": "horizontal-3",
-    "to": "horizontal-9"
+    "parentNode": "horizontal-3"
   },
   {
-    "id": "horizontal-10",
+    "nodeId": "horizontal-10",
     "nodeLabel": "Customer Support",
     "nodePosition": "1.3.2",
-    "from": "horizontal-3",
-    "to": "horizontal-10"
+    "parentNode": "horizontal-3"
   },
   {
-    "id": "horizontal-11",
+    "nodeId": "horizontal-11",
     "nodeLabel": "Support",
     "nodePosition": "1.3.3",
-    "from": "horizontal-3",
-    "to": "horizontal-11"
+    "parentNode": "horizontal-3"
   },
   {
-    "id": "horizontal-12",
+    "nodeId": "horizontal-12",
     "nodeLabel": "Agents",
     "nodePosition": "1.2.1",
-    "from": "horizontal-2",
-    "to": "horizontal-12"
+    "parentNode": "horizontal-2"
   },
   {
-    "id": "horizontal-13",
+    "nodeId": "horizontal-13",
     "nodeLabel": "Sales",
     "nodePosition": "1.3.1",
-    "from": "horizontal-2",
-    "to": "horizontal-13"
+    "parentNode": "horizontal-2"
   },
   {
-    "id": "horizontal-14",
+    "nodeId": "horizontal-14",
     "nodeLabel": "Customer Support",
     "nodePosition": "1.3.2",
-    "from": "horizontal-13",
-    "to": "horizontal-14"
+    "parentNode": "horizontal-13"
   },
   {
-    "id": "horizontal-15",
+    "nodeId": "horizontal-15",
     "nodeLabel": "Support",
     "nodePosition": "1.3.3",
-    "from": "horizontal-13",
-    "to": "horizontal-15"
+    "parentNode": "horizontal-13"
   },
   {
-    "id": "horizontal-16",
+    "nodeId": "horizontal-16",
     "nodeLabel": "Agents",
     "nodePosition": "1.2.1",
-    "from": "horizontal-14",
-    "to": "horizontal-16"
+    "parentNode": "horizontal-14"
   },
   {
-    "id": "horizontal-17",
+    "nodeId": "horizontal-17",
     "nodeLabel": "Customer Support",
     "nodePosition": "1.3.2",
-    "from": "horizontal-5",
-    "to": "horizontal-17"
+    "parentNode": "horizontal-5"
   },
   {
-    "id": "horizontal-18",
+    "nodeId": "horizontal-18",
     "nodeLabel": "Support",
     "nodePosition": "1.3.3",
-    "from": "horizontal-5",
-    "to": "horizontal-18"
+    "parentNode": "horizontal-5"
   },
   {
-    "id": "horizontal-19",
+    "nodeId": "horizontal-19",
     "nodeLabel": "Agents",
     "nodePosition": "1.2.1",
-    "from": "horizontal-5",
-    "to": "horizontal-19"
+    "parentNode": "horizontal-5"
   },
   {
-    "id": "horizontal-20",
+    "nodeId": "horizontal-20",
     "nodeLabel": "Customer Support",
     "nodePosition": "1.3.2",
-    "from": "horizontal-8",
-    "to": "horizontal-20"
+    "parentNode": "horizontal-8"
   },
   {
-    "id": "horizontal-21",
+    "nodeId": "horizontal-21",
     "nodeLabel": "Support",
     "nodePosition": "1.3.3",
-    "from": "horizontal-8",
-    "to": "horizontal-21"
+    "parentNode": "horizontal-8"
   },
   {
-    "id": "horizontal-22",
+    "nodeId": "horizontal-22",
     "nodeLabel": "Agents",
     "nodePosition": "1.2.1",
-    "from": "horizontal-8",
-    "to": "horizontal-22"
+    "parentNode": "horizontal-8"
   }
 ]

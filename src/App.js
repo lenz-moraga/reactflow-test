@@ -1,12 +1,33 @@
+import React, { useState } from "react";
 import "./assets/styles/App.scss";
 import { MapProvider } from "./services/MapProvider";
 import MapRenderer from "./components/MapRenderer";
+import Papa from "papaparse";
 
 function App() {
+  const [nodesToRender, setNodesToRender] = useState();
+
+  const onChangeFileHandler = (evt) => {
+    const files = evt.target.files;
+    
+    if (files) {
+      Papa.parse(files[0], {
+        escapeFormulae: true,
+        header: true,
+        complete: function(results) {
+          setNodesToRender(results.data);
+          console.log('results.data', results.data)
+        }}
+      )
+
+    }
+  }
+
   return (
     <div className="App position-relative">
+      <input type="file" onChange={onChangeFileHandler}/>
       <MapProvider>
-        <MapRenderer />
+        {nodesToRender && <MapRenderer nodesToRender={nodesToRender} />}
       </MapProvider>
       {/* <iframe
         title="asd"

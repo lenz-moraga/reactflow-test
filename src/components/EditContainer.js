@@ -3,9 +3,9 @@ import { MapContext } from "../services/MapProvider";
 
 const EditContainer = ({ node, setNodeName }) => {
   const { showDiv, showDivHandler } = useContext(MapContext);
-  const { id, nodeLabel, nodePosition, hasProducts } = node[0];
+  const { nodeId, nodeLabel, nodePosition, hasProducts } = node;
   const [nodeInfo, setNodeInfo] = useState({
-    id,
+    nodeId,
     nodeLabel,
     nodePosition,
     hasProducts,
