@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { MapContext } from "../services/MapProvider";
-import nodeIcon from "../assets/svgIcons/nodeIcon.svg";
 import editIcon from "../assets/svgIcons/editIcon.svg";
 
-const TreeNode = ({ nodeInformation, showNodePosition }) => {
-  const { showDivHandler } = useContext(MapContext);
+const TreeNode = ({ nodeInformation }) => {
+  const { showNodeInformationHandler } = useContext(MapContext);
   const { id, nodeLabel, nodePosition, Rules } = nodeInformation;
 
   const renderRuleBadges = Rules?.map((rule, index) => (
@@ -25,7 +24,7 @@ const TreeNode = ({ nodeInformation, showNodePosition }) => {
           <hr className="NodeContainer-Divider" />
           <div className="NodeContainer-Position">
             <span>{nodePosition}</span>
-            <button type="button" onClick={showDivHandler}><img src={editIcon} alt="editIcon.svg" /></button>
+            <button type="button" onClick={showNodeInformationHandler}><img src={editIcon} alt="editIcon.svg" /></button>
           </div>
         </div>
       )}

@@ -2,36 +2,37 @@ import React, { useContext, useState, useEffect } from "react";
 import { MapContext } from "../services/MapProvider";
 
 const EditContainer = ({ node, setNodeName }) => {
-  const { showDiv, showDivHandler } = useContext(MapContext);
-  const { nodeId, nodeLabel, nodePosition, hasProducts } = node;
-  const [nodeInfo, setNodeInfo] = useState({
-    nodeId,
-    nodeLabel,
-    nodePosition,
-    hasProducts,
-  });
+  const { showDiv, showNodeInformationHandler } = useContext(MapContext);
+  const { nodeId, nodeLabel, nodePosition } = node[0];
+  // const [nodeInfo, setNodeInfo] = useState({
+  //   nodeId,
+  //   nodeLabel,
+  //   nodePosition,
+  // });
 
-  const [nodeName] = useState(nodeInfo.nodeLabel || '')
-  const [nodePositionInfo] = useState(nodeInfo.nodePosition || '')
+  // const [nodeName] = useState(nodeInfo.nodeLabel || '')
+  // const [nodePositionInfo] = useState(nodeInfo.nodePosition || '')
+
+  console.log('nodeId', nodeId)
 
   useEffect(() => {
-    if (showDiv) setNodeInfo(node);
+    // if (showDiv && node) setNodeInfo(node);
   }, [showDiv, node]);
 
-  const onValueChangeHandler = ({ target: { name, value } }) => {
-    setNodeInfo((prevState) => ({ ...prevState, [name]: value }));
-  };
+  // const onValueChangeHandler = ({ target: { name, value } }) => {
+  //   setNodeInfo((prevState) => ({ ...prevState, [name]: value }));
+  // };
 
   const onSubmitHandler = (evt) => {
     evt.preventDefault();
     // setNodeInfo((prevState) => ({ ...prevState, nodeLabel: nodeInfoName }));
-    setNodeName(nodeInfo);
+    // setNodeName(nodeInfo);
     // console.log("nodeInfoName", nodeInfoName);
   };
 
   return (
     <div className={!showDiv ? "d-none" : "showNodeSetup"}>
-      <div className="darkedBackground" onClick={() => showDivHandler()} />
+      <div className="darkedBackground" onClick={() => showNodeInformationHandler()} />
       <div className="nodeContainer">
         <form onSubmit={onSubmitHandler} className="nodeContainer-Form">
           <div className="formbuilder-text form-group field-text-1650292239440">
@@ -44,8 +45,9 @@ const EditContainer = ({ node, setNodeName }) => {
               name="nodeLabel"
               access="false"
               id="text-1650292239440"
-              value={nodeName}
-              onChange={onValueChangeHandler}
+              value={nodeLabel}
+              // onChange={onValueChangeHandler}
+              readOnly
             />
           </div>
           <div className="formbuilder-text form-group field-text-1650292242226">
@@ -58,8 +60,9 @@ const EditContainer = ({ node, setNodeName }) => {
               name="nodePosition"
               access="false"
               id="text-1650292242226"
-              value={nodePositionInfo}
-              onChange={onValueChangeHandler}
+              value={nodePosition}
+              // onChange={onValueChangeHandler}
+              readOnly
             />
           </div>
           <div className="formbuilder-checkbox-group form-group field-checkbox-group-1650292285427">

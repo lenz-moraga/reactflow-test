@@ -1,7 +1,7 @@
-nodeId,nodeLabel,nodePosition,parentNode,Rules/0/RuleId,Rules/0/RuleType,Rules/0/RuleName,Rules/1/RuleId,Rules/1/RuleType,Rules/1/RuleName
+nodeId,nodeLabel,nodePosition,parentNode,FastLaneRule/FastLaneRuleId,FastLaneRule/FastLaneRuleType,FastLaneRule/FastLaneRuleName,PayPhoneRule/RuleId,PayPhoneRule/RuleType,PayPhoneRule/RuleName
 horizontal-1,+1 888 222 3333,1,,,,,,,
 horizontal-2,1. English,1.1,horizontal-1,FLRule-123,FastLane,FastLane-Rule123,,,
-horizontal-3,2. Spanish,1.2,horizontal-1,PPRule-123,PayPhone,PayPhone-Rule123,,,
+horizontal-3,2. Spanish,1.2,horizontal-1,,,,PPRule-123,PayPhone,PayPhone-Rule123
 horizontal-4,3. Portuguese,1.3,horizontal-1,FLRule-123,FastLane,FastLane-Rule123,PPRule-123,PayPhone,PayPhone-Rule123
 horizontal-5,Sales,1.3.1,horizontal-4,,,,,,
 horizontal-6,Customer Support,1.3.2,horizontal-4,,,,,,

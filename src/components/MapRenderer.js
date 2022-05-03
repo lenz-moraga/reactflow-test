@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { MapContext } from "../services/MapProvider";
 import ReactFlow, {
   addEdge,
@@ -13,21 +13,15 @@ import TreeNode from "./TreeNode";
 import { getLayoutedElements } from "../services/layOutNodes";
 
 import EditContainer from "./EditContainer";
-import dataNode from "../assets/nodeData/dataNode.json";
 
 const MapRenderer = ({ nodesToRender }) => {
-  const { showDiv, showNodePosition, setShowNodePosition } =
+  const { showDiv, showDivHandler } =
     useContext(MapContext);
   const [nodeName, setNodeName] = useState("");
 
-  useEffect(() => {}, []);
-
   ////////////////////////////////////////////////////////////////////////////
 
-  console.log('nodesToRender', nodesToRender)
-
-  // const customNodes = nodesToRender;
-  const customNodes = dataNode;
+  const customNodes = nodesToRender;
   const filteredNodes = customNodes.filter(
     (nodeInfo) => nodeInfo.parentNode !== ""
   );
@@ -57,15 +51,16 @@ const MapRenderer = ({ nodesToRender }) => {
 
   //////////////////////////////////////////////////////////////////////////
 
+
+
   const onNodeClick = (event, node) => {
-    if(event.detail === 2) console.log('first')
-    setShowNodePosition((prevState) => !prevState);
-    setNodeName(customNodes.filter((customNode) => node.id === customNode.id));
+    if (event.detail === 2) { 
+      console.log('node.NodeId', node.id)
+    }
+    setNodeName(customNodes.filter((customNode) => node.id === customNode.nodeId));
   };
 
   const onConnect = (params) => setEdges((els) => addEdge(params, els));
-
-
 
   return (
     <>

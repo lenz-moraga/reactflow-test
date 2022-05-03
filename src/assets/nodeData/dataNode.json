@@ -10,44 +10,38 @@
     "nodeLabel": "1. English",
     "nodePosition": "1.1",
     "parentNode": "horizontal-1",
-    "Rules": [
-      {
-        "RuleId": "FLRule-123",
-        "RuleType": "FastLane",
-        "RuleName": "FastLane-Rule123"
-      }
-    ]
+    "FastLaneRule": {
+      "FastLaneRuleId": "FLRule-123",
+      "FastLaneRuleType": "FastLane",
+      "FastLaneRuleName": "FastLane-Rule123"
+    }
   },
   {
     "nodeId": "horizontal-3",
     "nodeLabel": "2. Spanish",
     "nodePosition": "1.2",
     "parentNode": "horizontal-1",
-    "Rules": [
-      {
-        "RuleId": "PPRule-123",
-        "RuleType": "PayPhone",
-        "RuleName": "PayPhone-Rule123"
-      }
-    ]
+    "PayPhoneRule": {
+      "RuleId": "PPRule-123",
+      "RuleType": "PayPhone",
+      "RuleName": "PayPhone-Rule123"
+    }
   },
   {
     "nodeId": "horizontal-4",
     "nodeLabel": "3. Portuguese",
     "nodePosition": "1.3",
     "parentNode": "horizontal-1",
-    "Rules": [
-      {
-        "RuleId": "FLRule-123",
-        "RuleType": "FastLane",
-        "RuleName": "FastLane-Rule123"
-      },
-      {
-        "RuleId": "PPRule-123",
-        "RuleType": "PayPhone",
-        "RuleName": "PayPhone-Rule123"
-      }
-    ]
+    "FastLaneRule": {
+      "FastLaneRuleId": "FLRule-123",
+      "FastLaneRuleType": "FastLane",
+      "FastLaneRuleName": "FastLane-Rule123"
+    },
+    "PayPhoneRule": {
+      "RuleId": "PPRule-123",
+      "RuleType": "PayPhone",
+      "RuleName": "PayPhone-Rule123"
+    }
   },
   {
     "nodeId": "horizontal-5",
