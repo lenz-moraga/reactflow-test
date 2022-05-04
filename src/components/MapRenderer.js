@@ -15,8 +15,7 @@ import { getLayoutedElements } from "../services/layOutNodes";
 import EditContainer from "./EditContainer";
 
 const MapRenderer = ({ nodesToRender }) => {
-  const { showDiv, showDivHandler } =
-    useContext(MapContext);
+  const { showDiv } = useContext(MapContext);
   const [nodeName, setNodeName] = useState("");
 
   ////////////////////////////////////////////////////////////////////////////
@@ -27,7 +26,7 @@ const MapRenderer = ({ nodesToRender }) => {
   );
   const initialEdges = filteredNodes.map((nodeInfo) => ({
     id: `edge-${nodeInfo.nodeId}`,
-    source: nodeInfo.parentNode,
+    source: nodeInfo.parentNodeId,
     target: nodeInfo.nodeId,
     type: "default",
   }));
@@ -51,13 +50,13 @@ const MapRenderer = ({ nodesToRender }) => {
 
   //////////////////////////////////////////////////////////////////////////
 
-
-
   const onNodeClick = (event, node) => {
-    if (event.detail === 2) { 
-      console.log('node.NodeId', node.id)
+    if (event.detail === 2) {
+      console.log("node.NodeId", node.id);
     }
-    setNodeName(customNodes.filter((customNode) => node.id === customNode.nodeId));
+    setNodeName(
+      customNodes.filter((customNode) => node.id === customNode.nodeId)
+    );
   };
 
   const onConnect = (params) => setEdges((els) => addEdge(params, els));

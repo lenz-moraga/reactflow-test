@@ -3,10 +3,9 @@ import "./assets/styles/App.scss";
 import { MapProvider } from "./services/MapProvider";
 import MapRenderer from "./components/MapRenderer";
 import Papa from "papaparse";
-import { usePapaParse, useCSVDownloader } from "react-papaparse";
+import { useCSVDownloader } from "react-papaparse";
 
 function App() {
-  const { jsonToCSV } = usePapaParse();
   const { CSVDownloader, Type } = useCSVDownloader();
 
   const [nodesToRender, setNodesToRender] = useState();

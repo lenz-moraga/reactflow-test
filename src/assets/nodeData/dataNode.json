@@ -1,154 +1,138 @@
 [
   {
-    "nodeId": "horizontal-1",
-    "nodeLabel": "+1 888 222 3333",
+    "nodeId": "placeHolderNodeId-1",
+    "Label": "+1 888 222 3333",
     "nodePosition": "1",
-    "parentNode": ""
+    "parentNodeId": ""
   },
   {
-    "nodeId": "horizontal-2",
-    "nodeLabel": "1. English",
+    "nodeId": "placeHolderNodeId-2",
+    "Label": "1. English",
     "nodePosition": "1.1",
-    "parentNode": "horizontal-1",
-    "FastLaneRule": {
-      "FastLaneRuleId": "FLRule-123",
-      "FastLaneRuleType": "FastLane",
-      "FastLaneRuleName": "FastLane-Rule123"
-    }
+    "parentNodeId": "placeHolderNodeId-1",
+    "fastLaneRuleId": "FLRule-123"
   },
   {
-    "nodeId": "horizontal-3",
-    "nodeLabel": "2. Spanish",
+    "nodeId": "placeHolderNodeId-3",
+    "Label": "2. Spanish",
     "nodePosition": "1.2",
-    "parentNode": "horizontal-1",
-    "PayPhoneRule": {
-      "RuleId": "PPRule-123",
-      "RuleType": "PayPhone",
-      "RuleName": "PayPhone-Rule123"
-    }
+    "parentNodeId": "placeHolderNodeId-1",
+    "payPhoneRuleId": "PPRule-123"
   },
   {
-    "nodeId": "horizontal-4",
-    "nodeLabel": "3. Portuguese",
+    "nodeId": "placeHolderNodeId-4",
+    "Label": "3. Portuguese",
     "nodePosition": "1.3",
-    "parentNode": "horizontal-1",
-    "FastLaneRule": {
-      "FastLaneRuleId": "FLRule-123",
-      "FastLaneRuleType": "FastLane",
-      "FastLaneRuleName": "FastLane-Rule123"
-    },
-    "PayPhoneRule": {
-      "RuleId": "PPRule-123",
-      "RuleType": "PayPhone",
-      "RuleName": "PayPhone-Rule123"
-    }
+    "parentNodeId": "placeHolderNodeId-1",
+    "fastLaneRuleId": "FLRule-123",
+    "payPhoneRuleId": "PPRule-123"
   },
   {
-    "nodeId": "horizontal-5",
-    "nodeLabel": "Sales",
+    "nodeId": "placeHolderNodeId-5",
+    "Label": "Sales",
     "nodePosition": "1.3.1",
-    "parentNode": "horizontal-4"
+    "parentNodeId": "placeHolderNodeId-4"
   },
   {
-    "nodeId": "horizontal-6",
-    "nodeLabel": "Customer Support",
+    "nodeId": "placeHolderNodeId-6",
+    "Label": "Customer Support",
     "nodePosition": "1.3.2",
-    "parentNode": "horizontal-4"
+    "parentNodeId": "placeHolderNodeId-4"
   },
   {
-    "nodeId": "horizontal-7",
-    "nodeLabel": "Support",
+    "nodeId": "placeHolderNodeId-7",
+    "Label": "Support",
     "nodePosition": "1.3.3",
-    "parentNode": "horizontal-4"
+    "parentNodeId": "placeHolderNodeId-4"
   },
   {
-    "nodeId": "horizontal-8",
-    "nodeLabel": "Agents",
+    "nodeId": "placeHolderNodeId-8",
+    "Label": "Agents",
     "nodePosition": "1.2.1",
-    "parentNode": "horizontal-3"
+    "parentNodeId": "placeHolderNodeId-3"
   },
   {
-    "nodeId": "horizontal-9",
-    "nodeLabel": "Sales",
+    "nodeId": "placeHolderNodeId-9",
+    "Label": "Sales",
     "nodePosition": "1.3.1",
-    "parentNode": "horizontal-3"
+    "parentNodeId": "placeHolderNodeId-3"
   },
   {
-    "nodeId": "horizontal-10",
-    "nodeLabel": "Customer Support",
+    "nodeId": "placeHolderNodeId-10",
+    "Label": "Customer Support",
     "nodePosition": "1.3.2",
-    "parentNode": "horizontal-3"
+    "parentNodeId": "placeHolderNodeId-3"
   },
   {
-    "nodeId": "horizontal-11",
-    "nodeLabel": "Support",
+    "nodeId": "placeHolderNodeId-11",
+    "Label": "Support",
     "nodePosition": "1.3.3",
-    "parentNode": "horizontal-3"
+    "parentNodeId": "placeHolderNodeId-3"
   },
   {
-    "nodeId": "horizontal-12",
-    "nodeLabel": "Agents",
+    "nodeId": "placeHolderNodeId-12",
+    "Label": "Agents",
     "nodePosition": "1.2.1",
-    "parentNode": "horizontal-2"
+    "parentNodeId": "placeHolderNodeId-2"
   },
   {
-    "nodeId": "horizontal-13",
-    "nodeLabel": "Sales",
+    "nodeId": "placeHolderNodeId-13",
+    "Label": "Sales",
     "nodePosition": "1.3.1",
-    "parentNode": "horizontal-2"
+    "parentNodeId": "placeHolderNodeId-2"
   },
   {
-    "nodeId": "horizontal-14",
-    "nodeLabel": "Customer Support",
+    "nodeId": "placeHolderNodeId-14",
+    "Label": "Customer Support",
     "nodePosition": "1.3.2",
-    "parentNode": "horizontal-13"
+    "parentNodeId": "placeHolderNodeId-13"
   },
   {
-    "nodeId": "horizontal-15",
-    "nodeLabel": "Support",
+    "nodeId": "placeHolderNodeId-15",
+    "Label": "Support",
     "nodePosition": "1.3.3",
-    "parentNode": "horizontal-13"
+    "parentNodeId": "placeHolderNodeId-13"
   },
   {
-    "nodeId": "horizontal-16",
-    "nodeLabel": "Agents",
+    "nodeId": "placeHolderNodeId-16",
+    "Label": "Agents",
     "nodePosition": "1.2.1",
-    "parentNode": "horizontal-14"
+    "parentNodeId": "placeHolderNodeId-14"
   },
   {
-    "nodeId": "horizontal-17",
-    "nodeLabel": "Customer Support",
+    "nodeId": "placeHolderNodeId-17",
+    "Label": "Customer Support",
     "nodePosition": "1.3.2",
-    "parentNode": "horizontal-5"
+    "parentNodeId": "placeHolderNodeId-5"
   },
   {
-    "nodeId": "horizontal-18",
-    "nodeLabel": "Support",
+    "nodeId": "placeHolderNodeId-18",
+    "Label": "Support",
     "nodePosition": "1.3.3",
-    "parentNode": "horizontal-5"
+    "parentNodeId": "placeHolderNodeId-5"
   },
   {
-    "nodeId": "horizontal-19",
-    "nodeLabel": "Agents",
+    "nodeId": "placeHolderNodeId-19",
+    "Label": "Agents",
     "nodePosition": "1.2.1",
-    "parentNode": "horizontal-5"
+    "parentNodeId": "placeHolderNodeId-5"
   },
   {
-    "nodeId": "horizontal-20",
-    "nodeLabel": "Customer Support",
+    "nodeId": "placeHolderNodeId-20",
+    "Label": "Customer Support",
     "nodePosition": "1.3.2",
-    "parentNode": "horizontal-8"
+    "parentNodeId": "placeHolderNodeId-8"
   },
   {
-    "nodeId": "horizontal-21",
-    "nodeLabel": "Support",
+    "nodeId": "placeHolderNodeId-21",
+    "Label": "Support",
     "nodePosition": "1.3.3",
-    "parentNode": "horizontal-8"
+    "parentNodeId": "placeHolderNodeId-8"
   },
   {
-    "nodeId": "horizontal-22",
-    "nodeLabel": "Agents",
+    "nodeId": "placeHolderNodeId-22",
+    "Label": "Agents",
     "nodePosition": "1.2.1",
-    "parentNode": "horizontal-8"
+    "parentNodeId": "placeHolderNodeId-8"
   }
 ]
